@@ -22,7 +22,9 @@ else
 fi
 
 # Add the variables to the config.zsh file
-echo "zt_welcome=$zt_welcome" >> ~/.zshrc
-echo "zt_aliases=$zt_aliases" >> ~/.zshrc
+echo "zt_welcome=$zt_welcome" >>$(dirname "$0")/config.zsh
+
+echo "zt_aliases=$zt_aliases" >>$(dirname "$0")/config.zsh
+
 
 echo "Installation complete! The welcome message and aliases are set according to your preferences."
