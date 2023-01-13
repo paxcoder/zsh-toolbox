@@ -3,12 +3,11 @@ git clone https://github.com/paxcoder/zsh-toolbox ~/.oh-my-zsh/plugins/zsh-toolb
 
 # Ask the user if they want to see the welcome message at startup
 read -p "Do you want to see the welcome message at startup? (y/n) " welcome_response
-
 # Set the value of zt_welcome based on the user's response
 if [ "$welcome_response" = "y" ]; then
-  zt_welcome=1
+echo zt_welcome=1>>~/.oh-my-zsh/plugins/zsh-toolbox/config.sh
 else
-  zt_welcome=0
+echo zt_welcome=0>>~/oh-my-zsh/plugins/zsh-toolbox/config.sh
 fi
 
 # Ask the user if they want to enable aliases
@@ -16,16 +15,15 @@ read -p "Do you want to enable aliases? (y/n) " aliases_response
 
 # Set the value of zt_aliases based on the user's response
 if [ "$aliases_response" = "y" ]; then
-  zt_aliases=1
+echo zt_aliases=1>>~/.oh-my-zsh/plugins/zsh-toolbox/config.sh
 else
-  zt_aliases=0
+echo zt_aliases=0>>~/.oh-my-zsh/plugins/zsh_toolbox/config.sh
 fi
 
-# Add the variables to the config.zsh file
-echo "zt_welcome=$zt_welcome" >>$(dirname "$0")/config.zsh
-
-echo "zt_aliases=$zt_aliases" >>$(dirname "$0")/config.zsh
-read -p ok, final question, do you want to update homebrew packages? "brew"
-if $brew == y
-echo zt_brew>>~/.oh-my-zsh/plugins/zsh_toolbox/config
-echo "Installation complete! The welcome message and aliases are set according to your preferences."
+read -p "ok, final question: do you want to update homebrew packages automaticaly? y/n" brew
+if [ "$brew" = "y" ]; then
+    echo "zt_brew=1" >> ~/.oh-my-zsh/plugins/zsh-toolbox/config
+else
+    echo "zt_brew=0" >> ~/.oh-my-zsh/plugins/zsh-toolbox/config
+fi
+echo "Installation complete!  everything is set according to your preferences."
