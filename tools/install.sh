@@ -25,6 +25,7 @@ fi
 echo "zt_welcome=$zt_welcome" >>$(dirname "$0")/config.zsh
 
 echo "zt_aliases=$zt_aliases" >>$(dirname "$0")/config.zsh
-
-
+read -p ok, final question, do you want to update homebrew packages? "brew"
+if $brew == y
+echo zt_brew>>~/.oh-my-zsh/plugins/zsh_toolbox/config
 echo "Installation complete! The welcome message and aliases are set according to your preferences."

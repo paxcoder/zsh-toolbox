@@ -1,5 +1,5 @@
 source $(dirname "$0")/config.zsh
-  tbv=2.0.1
+  tbv=3.0
 
 if [ $zt_welcome = "1" ]; then
   echo "this is zsh, version  $ZSH_VERSION, on"
