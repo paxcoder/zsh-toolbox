@@ -1,4 +1,3 @@
-# Make this work with other plugin managers, not just oh-my-zsh
 source $(dirname "$0")/config.zsh
   tbv=2.0.1
 
@@ -12,4 +11,8 @@ fi
 if [ $zt_aliases = "1" ]; then
   alias mz=omz
   alias mzu='omz update'
+fi
+#for brew users.
+if [ $zt_brew = "1" ]; then
+source $(dirname $0)/bin/brew
 fi
