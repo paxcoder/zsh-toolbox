@@ -1,7 +1,8 @@
 # zsh-toolbox
 
 ## Usability
-
+please see codeberg for new versions:
+https://codeberg.org/paxcoder/zshutils
 - You can for now: see the welcome message, and there's alias `mz` to `omz`
 - Now, in version 0.2 you see your ZSH version, the output of `uname` and the plugin's version
 - [homebrew](https://brew.sh) packages will update automaticaly if you set it to do so, exclusive for 3.0
